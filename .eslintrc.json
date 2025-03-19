@@ -1,22 +1,35 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
+    // "plugin:import/recommended",
+    // "plugin:import/typescript",
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["tailwindcss"],
+  "plugins": [
+    "tailwindcss"
+  ],
   "rules": {
     "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/classnames-order": "off"
+    "tailwindcss/classnames-order": "error"
   },
   "settings": {
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true
       }
+    },
+    "tailwindcss": {
+      "callees": [
+        "cn"
+      ],
+      "config": "tailwind.config.ts"
+    },
+    "next": {
+      "rootDir": true
     }
   },
-  "ignorePatterns": ["**/components/ui/**"]
+  "ignorePatterns": [
+    "**/components/ui/**"
+  ]
 }
